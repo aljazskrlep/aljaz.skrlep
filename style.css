@@ -8,9 +8,9 @@ html, body {
     grid-template-columns: auto auto auto;
     background-color: rgb(197, 240, 255);
     padding: 20px;
-  }
-  
-  .grid-item {
+}
+
+.grid-item, .grid-item1 {
     background-color: rgb(254, 255, 166);
     border: 1px solid rgb(67, 92, 255);
     font-family: Arial, Helvetica, sans-serif;
@@ -20,105 +20,120 @@ html, body {
     text-align: center;
     border-radius: 30%;
     transition: all 0.2s ease;
-  }
+}
 
-  .grid-item1 {
-    background-color: rgb(254, 255, 166);
-    border: 1px solid rgb(67, 92, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(67, 92, 255);
-    padding: 157px;
-    font-size: 20px;
-    text-align: center;
+.grid-item1 {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .grid-item:hover {
+.grid-item:hover {
     color: yellow;
     background-color: rgb(67, 92, 255);
     transform: scale(1.05);
-
 }
 
-
-  body {
+body {
     background-color: rgb(197, 240, 255);
-  }
+}
 
-  .img {
+.img {
     float: left;
-  }
-  
-  #img1 {
+}
+
+#img1, #img2, #img3 {
     float: left;
     margin-right: 10px;
     margin-left: 10px;
     border: 1px solid rgb(234, 255, 0);
     max-width: 100%;
     max-height: 100%;
-  }
+}
 
-  #img2 {
-    float: right;
-    margin-right: 10px;
-    margin-left: 10px;
-    border: 1px solid rgb(234, 255, 0);
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  #img3 {
-    position: relative;
-    left: 10px;
-    margin-right: 10px;
-    border: 1px solid rgb(234, 255, 0);
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  p {
-  color: rgb(67, 92, 255);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+p {
+    color: rgb(67, 92, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }
 
 a {
-text-decoration: none;
+    text-decoration: none;
 }
 
 .yellow-text {
     color: yellow;
     text-shadow: -1px -1px 0 rgb(67, 92, 255),  
-                 1px -1px 0 rgb(67, 92, 255),  
+                1px -1px 0 rgb(67, 92, 255),  
                 -1px 1px 0 rgb(67, 92, 255),  
-                 1px 1px 0 rgb(67, 92, 255);
+                1px 1px 0 rgb(67, 92, 255);
 }
 
 .column {
-  float: left;
-  width: 24%;
-  padding: 6.5px;
+    float: left;
+    width: 24%;
+    padding: 6.5px;
 }
 
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .head {
-  position: fixed;
-  bottom: -200px; /* Start position, below the screen */
-  right: -200px; /* Start position, outside the screen */
-  width: 180px; /* Adjust width as needed */
-  height: auto;
-  transform: rotate(-45deg); /* Apply rotation */
-  transition: bottom 2s ease, right 2s ease; /* Smooth transition for bottom and right properties */
+    position: fixed;
+    bottom: -200px; /* Start position, below the screen */
+    right: -200px; /* Start position, outside the screen */
+    width: 180px; /* Adjust width as needed */
+    height: auto;
+    transform: rotate(-45deg); /* Apply rotation */
+    transition: bottom 2s ease, right 2s ease; /* Smooth transition for bottom and right properties */
 }
 
 .show {
-  bottom: -30px; /* Adjust this value to determine the final bottom position */
-  right: -5px; /* Adjust this value to determine the final right position */
+    bottom: -30px; /* Adjust this value to determine the final bottom position */
+    right: -5px; /* Adjust this value to determine the final right position */
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+    .grid-item, .grid-item1 {
+        padding: 80px;
+        font-size: 16px;
+    }
+
+    .column {
+        width: 45%;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: auto;
+        gap: 5px;
+    }
+
+    .grid-item, .grid-item1 {
+        padding: 40px;
+        font-size: 14px;
+        border-radius: 15%;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    #img1, #img2, #img3 {
+        width: 100%;
+        height: auto;
+    }
 }
